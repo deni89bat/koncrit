@@ -30,11 +30,9 @@ public class BaseTest {
     @BeforeAll
     public static void setUp() {
         closeWebDriver();
-        //Configuration.browser = "chrome";
-
-        //Configuration.remote = "http://193.239.160.56:4444/wd/hub";
-        // Configuration.browser = "chrome";
-        //Configuration.browserVersion = "128.0";
+        Configuration.remote = "http://193.239.160.56:4444/wd/hub";
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "128.0";
         Configuration.pageLoadStrategy = "eager";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
