@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 import pages.KoncritPage;
 
 public class KoncritTests extends BaseTest {
-    //KoncritPage koncritPage = new KoncritPage();
+    KoncritPage koncritPage = new KoncritPage();
 
     @Test
     @DisplayName("Проверить текст блоков на лендинге Koncrit")
-    void koncritTest() {
+    void koncritTextBlocksTest() {
         korusMainPage.openKoncritPage();
-        new KoncritPage()
+        koncritPage
                 .checkPageTitle()
                 .verifyAllBlocks();
     }
@@ -20,9 +20,9 @@ public class KoncritTests extends BaseTest {
     @Test
     @DisplayName("Проверить что форму обратной связи, нельзя отправить без согласия на обработку персональных данных")
     @Tag("Negative")
-    void callbackForm() {
+    void callbackFormTest() {
         korusMainPage.openKoncritPage();
-        new KoncritPage()
+        koncritPage
                 .checkPageTitle()
                 .clickDiscussProject()
                 .callbackFormIsOpened()
